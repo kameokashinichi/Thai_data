@@ -1,0 +1,77 @@
+The Dssat parameter for organic rice farming -How to set parameter for .RIX file-
+
+1. *CULTIVARS section (we can choose 5 varieties of Thailand rice in Dssat)
+TR0001 for “KDML105” variety
+TR0002 for “NIEW SANPATONG” variety
+TR0003 for “SUPANBURI 60” variety
+TR0004 for “CHAINAT 1” variety
+TR0005 for “DOA 1” variety
+
+"""
+Example of choosing “KDML105”
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 RI TR0001 KDML105
+"""
+
+
+2. *IRRIGATION AND WATER MANAGEMENT section
+the list of main parameters for irrigation
+IR003    Flood, mm
+IR008    Percolation rate, mm day-1                                   
+IR009    Bund height, mm                                                      
+IR010    Puddling (for Rice only)                                             
+IR011    Constant flood depth, mm
+
+"""
+Example1, maintain the water always 50mm depth during cultivation.
+*IRRIGATION AND WATER MANAGEMENT
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 1     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 1 85213 IR010     0
+ 1 85213 IR008    20
+ 1 85213 IR009   150
+ 1 85213 IR011    50
+
+Example2, only depending on rainfall, no irrigation.
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 1     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 1 85213 IR010     0
+ 1 85213 IR008    20
+ 1 85213 IR009   150
+"""
+
+3. *RESIDUES AND ORGANIC FERTILIZER section
+the list for main organic fertilizer(these parameters do not have huge impact against yield)
+RE001    Generic crop residue 
+RE999    Decomposed crop residue
+
+"""
+Example, using 300kg/ha of Generic crop residue which contains 0.5% nitrogen content.
+*RESIDUES AND ORGANIC FERTILIZER
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 1 85210 RE001   300    .5   -99   -99   -99    10   -99 -99
+"""
+
+4. *FERTILIZERS (INORGANIC)
+the list of the main chemical nitrogen fertilizer
+FE001    Ammonium nitrate
+FE002    Ammonium sulfate
+FE003    Ammonium nitrate sulfate
+FE004    Anhydrous ammonia
+FE005    Urea   
+
+"""
+Example, adding a certain amount of Ammonium nitrate which is equivalent to 20kg/ha nitrogen concentration.
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 1 85213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99
+"""
+
+
+
+
+
+
+

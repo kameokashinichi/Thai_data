@@ -1,0 +1,384 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec  4 10:09:38 2018
+
+@author: kameokashinichi
+"""
+
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import shutil
+from pylab import cm
+
+"""
+181204_Dssat spil-water relation file
+"""
+
+
+#read water stress Dssat file.
+soilW = []
+with open(os.getcwd() + '/' + 'SoilWat.OUT', 'r') as f:
+    for row in f:
+        soilW.append(row.strip())
+        
+soilW = soilW[12:]        
+
+#separate each rows by empty letter        
+stress = []     
+for row in soilW:
+    element = row.split()
+    stress.append(element)   
+        
+columns = stress[0]
+
+#extract available rows
+stress = np.asarray(stress)
+num = []
+for i in range(len(stress)):
+    if stress[i] == columns:
+        pass
+    elif len(stress[i]) != 23:
+        pass
+    else:
+        num.append(i)
+
+sw = stress[num]
+
+for i in range(len(sw)):
+    if len(sw[i]) != 23:
+        print(i)
+
+#convert list to np.array    
+s_stress = []
+for i in range(len(sw)):
+    s_stress.append(sw[i])
+s_stress = np.asarray(s_stress)    
+
+#convert np.ndarray to pd.DataFrame
+sw_df = pd.DataFrame(s_stress[:, 1:], columns=columns[1:], index = s_stress[:, 0])    
+   
+ 
+for i in range(len(sw_df.index)):
+    if i == len(sw_df.index) - 1:
+        print(i)
+        break
+    elif sw_df.index[i] == '2017' and sw_df.index[i] != sw_df.index[i+1]:
+        print(i)
+    else:
+        pass
+
+#dataframe for simulation No1    
+sw_df_1 = sw_df.iloc[:4646, :]    
+    
+#visualize the result    
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(1986, 2018):
+    ax.plot(sw_df_1.loc[:, 'DOY'][sw_df_1.index == repr(i)].values.astype(np.int32), 
+            sw_df_1.loc[:, 'SWTD'][sw_df_1.index == repr(i)].values.astype(np.int32),
+            color=cm.hsv(n/33), label=repr(i)+'(y='+repr(hwah[n])+')')
+    n = n+1
+    
+plt.legend(loc='best', ncol=5)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Total soil water content(mm)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Total soil water in profile(mm)', fontsize=15)
+ax.set_ylim(0, 410)
+
+#plt.savefig('181204_soil_water.png', bbox_inches='tight')
+plt.show()
+
+#classify THE GRAPH BY ANNUAL YIELD
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(0, 32):
+    im = ax.plot(sw_df_1.loc[:, 'DOY'][sw_df_1.index == repr(i+1986)].values.astype(np.int32), 
+            sw_df_1.loc[:, 'SWTD'][sw_df_1.index == repr(i+1986)].values.astype(np.int32),
+            color=cm.RdBu(hwah[i]/2626), label=repr(1986+i)+'(y='+repr(hwah[i])+')')
+    
+plt.legend(loc='best', ncol=5)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Total soil water content(mm)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Total soil water in profile(mm)', fontsize=15)
+ax.set_ylim(0, 410)
+plt.savefig('181204_soil_water_yield.png', bbox_inches='tight')
+plt.show()
+
+    
+    
+"""
+181204 Dssat summary file for thai data(1986-2017)
+"""    
+
+hwah = [2626, 1405, 1978, 1798, 2168, 1907, 1605, 2268, 1904,
+        644, 1544, 586, 1429, 1853, 1556, 879, 1681, 1809, 604, 
+        1386, 1561, 2252, 2422, 1546, 748, 1928, 1815, 1893, 614, 633, 2290, 640]
+
+
+"""
+181204 Dssat soil N file
+"""
+#read Soil N Dssat file.
+soilN = []
+with open(os.getcwd() + '/' + 'SoilNi.OUT', 'r') as f:
+    for row in f:
+        soilN.append(row.strip())
+        
+soilN = soilN[12:]        
+
+#separate each rows by empty letter        
+stressN = []     
+for row in soilN:
+    element = row.split()
+    stressN.append(element)   
+        
+columns = stressN[0]
+
+#extract available rows
+stressN = np.asarray(stressN)
+num = []
+for i in range(len(stressN)):
+    if stressN[i] == columns:
+        pass
+    elif len(stressN[i]) != 32:
+        pass
+    else:
+
+        num.append(i)
+sn = stressN[num]
+
+for i in range(len(sn)):
+    if len(sn[i]) != 32:
+        print(i)
+
+#convert list to np.array
+sn_stress = []
+for i in range(len(sn)):
+    sn_stress.append(sn[i])
+sn_stress = np.asarray(sn_stress)
+
+#convert np.ndarray to pd.DataFrame
+sn_df = pd.DataFrame(sn_stress[:, 1:], columns=columns[1:], index = sn_stress[:, 0])    
+
+#check the number of each simulation(1-5)    
+for i in range(len(sn_df.index)):
+    if i == len(sn_df.index) - 1:
+        print(i)
+        break
+    elif sn_df.index[i] == '2017' and sn_df.index[i] != sn_df.index[i+1]:
+        print(i)
+    else:
+        pass
+
+#dataframe for simulation No1 
+sn_df_1 = sn_df.iloc[:4646, :]
+
+#classify THE GRAPH BY ANNUAL YIELD
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(0, 32):
+    im = ax.plot(sn_df_1.loc[:, 'DOY'][sw_df_1.index == repr(i+1986)].values.astype(np.int32), 
+            sn_df_1.loc[:, 'NIAD'][sw_df_1.index == repr(i+1986)].values.astype(np.float64),
+            color=cm.RdBu(hwah[i]/2626), label=repr(1986+i)+'(y='+repr(hwah[i])+')')
+    
+plt.legend(loc='best', ncol=5)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Total soil N content(TPDOY=213)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Total soil N in profile(kg/ha)', fontsize=15)
+ax.set_ylim(5, 65)
+plt.savefig('181204_soil_N_yield.png', bbox_inches='tight')
+plt.show()
+
+
+"""
+181204 plant N flow
+"""
+
+#read Soil N Dssat file.
+PN = []
+with open(os.getcwd() + '/' + 'PlantN.OUT', 'r') as f:
+    for row in f:
+        PN.append(row.strip())
+        
+PN = PN[10:]
+
+#separate each rows by empty letter        
+stressPN = []     
+for row in PN:
+    element = row.split()
+    stressPN.append(element)   
+        
+columns = stressPN[0]
+
+#extract available rows
+stressPN = np.asarray(stressPN)
+num = []
+for i in range(len(stressPN)):
+    if stressPN[i] == columns:
+        pass
+    elif len(stressPN[i]) != 18:
+        pass
+    else:
+        num.append(i)
+        
+pn = stressPN[num]
+
+for i in range(len(pn)):
+    if len(pn[i]) != 18:
+        print(i)
+
+#convert list to np.array
+pn_stress = []
+for i in range(len(pn)):
+    pn_stress.append(pn[i])
+pn_stress = np.asarray(pn_stress)
+
+#convert np.ndarray to pd.DataFrame
+pn_df = pd.DataFrame(pn_stress[:, 1:], columns=columns[1:], index = pn_stress[:, 0])    
+
+#check the number of each simulation(1-5)    
+for i in range(len(pn_df.index)):
+    if i == len(pn_df.index) - 1:
+        print(i)
+        break
+    elif pn_df.index[i] == '2017' and pn_df.index[i] != pn_df.index[i+1]:
+        print(i)
+    else:
+        pass
+
+#dataframe for simulation No1 
+pn_df_1 = pn_df.iloc[:3526, :]
+
+#classify THE GRAPH BY ANNUAL YIELD
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(0, 32):
+    im = ax.plot(pn_df_1.loc[:, 'DOY'][pn_df_1.index == repr(i+1986)].values.astype(np.int32), 
+            pn_df_1.loc[:, 'LNAD'][pn_df_1.index == repr(i+1986)].values.astype(np.float64),
+            color=cm.RdBu(hwah[i]/2626), label=repr(1986+i)+'(y='+repr(hwah[i])+')')
+    
+plt.legend(loc='best', ncol=5)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Total plant N content(TPDOY=213)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Total plant N in profile(kg/ha)', fontsize=15)
+ax.set_ylim(3, 28)
+plt.savefig('181204_plant_N_yield.png', bbox_inches='tight')
+plt.show()
+
+"""
+181204 plantgro.out
+"""
+#read Plant growth Dssat file.
+PG = []
+with open(os.getcwd() + '/' + 'PlantGro.OUT', 'r') as f:
+    for row in f:
+        PG.append(row.strip())
+        
+PG = PG[13:]
+
+#separate each rows by empty letter        
+stressPG = []     
+for row in PG:
+    element = row.split()
+    stressPG.append(element)   
+        
+columns = stressPG[0]
+
+#extract available rows
+stressPG = np.asarray(stressPG)
+num = []
+for i in range(len(stressPG)):
+    if stressPG[i] == columns:
+        pass
+    elif len(stressPG[i]) != 36:
+        pass
+    else:
+        num.append(i)
+        
+pg = stressPG[num]
+
+for i in range(len(pg)):
+    if len(pg[i]) != 36:
+        print(i)
+
+#convert list to np.array(https://deepage.net/features/numpy-append.html, https://note.nkmk.me/python-numpy-dtype-astype/)
+pg_stress = []
+for i in range(len(pg)):
+    pg_stress.append(pg[i])
+pg_stress = np.asarray(pg_stress)
+
+#convert np.ndarray to pd.DataFrame
+pg_df = pd.DataFrame(pg_stress[:, 1:], columns=columns[1:], index = pg_stress[:, 0])    
+
+#check the number of each simulation(1-5)    
+for i in range(len(pg_df.index)):
+    if i == len(pg_df.index) - 1:
+        print(i)
+        break
+    elif pg_df.index[i] == '2017' and pg_df.index[i] != pg_df.index[i+1]:
+        print(i)
+    else:
+        pass
+
+#dataframe for simulation No1 
+pg_df_1 = pg_df.iloc[:3526, :]
+
+#classify THE GRAPH BY ANNUAL YIELD(Tiller number)
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(0, 32):
+    im = ax.plot(pg_df_1.loc[:, 'DOY'][pg_df_1.index == repr(i+1986)].values.astype(np.int32), 
+            pg_df_1.loc[:, 'T#AD'][pg_df_1.index == repr(i+1986)].values.astype(np.float64),
+            color=cm.RdBu(hwah[i]/2626), label=repr(1986+i)+'(y='+repr(hwah[i])+')')
+    
+plt.legend(loc='best', ncol=3)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Tiller number(TPDOY=213)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Tiller number(no/ha)', fontsize=15)
+#ax.set_ylim(3, 28)
+plt.savefig('181204_plant_tiller_number.png', bbox_inches='tight')
+plt.show()
+
+#classify THE GRAPH BY ANNUAL YIELD(Leaf Area Index)
+fig = plt.figure(figsize = (11, 8))
+ax = fig.add_subplot(1,1,1)
+
+n = 0
+for i in range(0, 32):
+    im = ax.plot(pg_df_1.loc[:, 'DOY'][pg_df_1.index == repr(i+1986)].values.astype(np.int32), 
+            pg_df_1.loc[:, 'LAID'][pg_df_1.index == repr(i+1986)].values.astype(np.float64),
+            color=cm.RdBu(hwah[i]/2626), label=repr(1986+i)+'(y='+repr(hwah[i])+')')
+    
+plt.legend(loc='best', ncol=2)
+#plt.xticks(np.arange(len(wthdf.index)), np.inspace(1, 365, num=5))
+plt.title("Leaf Area Index (TPDOY=213)", fontsize=18)
+plt.xlabel('Day of year', fontsize=15)
+plt.ylabel('Leaf Area Index(leafarea/unitarea)', fontsize=15)
+#ax.set_ylim(3, 28)
+plt.savefig('181204_plant_LAI.png', bbox_inches='tight')
+plt.show()
+
+
+
+
+
+        

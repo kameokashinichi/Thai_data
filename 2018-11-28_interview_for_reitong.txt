@@ -1,0 +1,12 @@
+The list of question in Raitong Organics Farm
+
+1. the variety they grow(especially within rice)
+2. the type of the soil in each field(information of particle size e.g. silt, clay, sand)
+3. Which type of cultivation they are doing, Transplanting or direct-sowing
+	・If transplanting, how many days and at what temperature do they raise seedling as a nursery?
+	・how they plant (broadcast or row planting)
+4. How they manage water (irrigated or rain fed)
+	・If irrigated, is there any duration for drying the field?
+5. When, how much do they add the organic fertilizer?
+
+

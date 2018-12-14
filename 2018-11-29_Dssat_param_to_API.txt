@@ -1,0 +1,141 @@
+Parameter list of the Dssat RIX file when the farmer use it as an application.
+
+
+1. Type of the planting method -> "Transplanting" or "Direct-sowing"
+
+If "Transplanting"(PLME="T") is selected, farmer should add the doy of transplanting(PDATE, yydoy), duration before the seedling is planted(PAGE) and temperature of the growth environment(PENV).
+Below is the example of the condition that transplanting doy is 213 of 2006, the seedling age is 35days-old and temperature of the nursery environment is 30degree.  
+
+*PLANTING DETAILS
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1 06213   -99    33    33     T     L    20     0     3   -99    35    30     1     0                        -99
+
+If "Direct-sowing"(PLME="S") is selected, farmer should only choose the seeding doy as "PDATE".
+
+*PLANTING DETAILS
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1 06213   -99    33    33     S     L    20     0     3   -99   -99   -99     1     0                        -99
+
+
+2. Type of the cultivation -> "Organic" or "Inorganic" or "both"
+
+If "Organic" is selected, the parameter "MF" will be set as 0, while "MR" set as 1.
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 F1 I1                      1  1  0  1  1  1  0  1  0  0  0  0  1
+
+And If the farmer add organic fertilizer 300kg/ha twice(in August 1st(=213) and September 30th(=273)), parameter will be below.
+
+*RESIDUES AND ORGANIC FERTILIZER
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 1 06213 RE001   300    .5   -99   -99   -99    10   -99 -99
+ 1 06273 RE001   300    .5   -99   -99   -99    10   -99 -99
+
+If "Inorganic" is selected, the parameter "MF" will be set as 1, while "MR" set as 0.
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 F1 I1                      1  1  0  1  1  1  1  0  0  0  0  0  1
+
+And If the farmer add fertilizer 40kgN/ha twice(in August 1st(=213) and September 10th(=253)), parameter will be
+
+*FERTILIZERS (INORGANIC)
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 1 06213 FE005 AP001     1    40   -99   -99   -99   -99   -99 -99
+ 1 06253 FE005 AP001     1    40   -99   -99   -99   -99   -99 -99
+
+If "both" is selected, both "MR" and "MF" parameters will be set as 1.
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 F1 I1                      1  1  0  1  1  1  1  1  0  0  0  0  1
+
+
+3. Variety of rice -> "KDML105": TR0001, "NIEW SANPATONG": TR0002, "SUPANBURI 60": TR0003, "CHAINAT 1": TR0004, "DOA 1": TR0005
+
+If KDML105 is selected, the parameter will be set as
+
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 RI TR0001 KDML105
+
+
+4. Type of water management, "Irrigated" or "Non Irrigated(Rain-fed)"
+
+If Irrigated is selected, the parameter "MI" will be set as 1
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 F1 I1                      1  1  0  1  1  1  1  0  0  0  0  0  1
+
+And the default is to keep the water 5cm depth.
+
+*IRRIGATION AND WATER MANAGEMENT
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 1     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 1 06213 IR010     0  !To show that the field has hardpan horizon
+ 1 06213 IR008    10  !To show the daily water loss from field
+ 1 06213 IR009   150  !To show the upper limit of water depth in the field
+ 1 06213 IR011    50  !To show the irrigated depth(mm) 
+
+If "Non-irrigated" is selected, the parameter "MI" will be set as 0.
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 F1 I1                      1  1  0  1  1  0  1  0  0  0  0  0  1
+
+5. Type of the soil -> currently only use the "WI_GLTH008" as "ID_SOIL"
+
+*FIELDS
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 1 SISA0601 SISA0601   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 1               0               0         0                 0     0     0     0   -99   -99
+
+6. Initial condition should be measured one week before the first fertilization.
+
+If first RDATE(organic) or FDATE(inorganic) is 06213, ICDAT should be set as 06206.
+*INITIAL CONDITIONS
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 1   -99 06206   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 1     5    .2  0.73  4.89  !This is the default value in Reitong farm 
+ 1    15    .2  0.29  0.51  
+ 1    30    .2  0.04  0.54  
+ 1    42    .2  0.08  1.02  
+ 1    55    .2  0.07  1.20  
+ 1    67    .2  0.11  1.89  
+
+7. The starting doy of the simulation("SDATE") should be same as the "ICDAT".
+
+If "ICDAT" is set as 06206, "SDATE" parameter will be set as 06206
+*SIMULATION CONTROLS
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 1 GE              1     1     S 06206  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 1 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 1 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 1 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 1 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 1 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 1 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 1 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 1 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 1 HA              0 83057   100     0
+
+
+
+
+

@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Nov 25 09:27:39 2018
+
+@author: kameokashinichi
+"""
+
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import shutil
+
+#read tmd data 
+tmd=pd.read_csv('./tmd-weather-service-master/data/tmd_historical_data/48409.csv', header=0)
+
+tmd_sun = tmd.loc[:, 'sunshine']
+
+"""
+181125 separate the data by each year
+"""
+tmd_annual_dict = {}
+
+tmd_year=tmd['date']/10000
+for i in range(len(tmd_year)):
+    tmd_year[i] = math.floor(tmd_year[i])
+    #np.unique(tmd_year)
+   
+tmd_year.name = "year"    
+
+tmd2 = pd.concat([tmd, tmd_year], axis=1)    
+    
+for i in range(1986, 2018):
+    data = tmd2[tmd2['year']==i]
+    tmd_annual_dict.update({i:data})
+
+
+
+
+#read nasa data
+#1.max temperature
+nasa_tmp_max=pd.read_csv('./tmd-weather-service-master/data/nasa_historical_data/converted/T2M_MAX_0.csv', header=0)
+
+#extract the data of wmo_id=48409
+nasa_tmp_max48409=nasa_tmp_max[nasa_tmp_max['wmo_id'] == 48409]
+
+#2. min temperature(celcius) for wmo_id=48409
+nasa_tmp_min=pd.read_csv('./tmd-weather-service-master/data/nasa_historical_data/converted/T2N_MIN_0.csv', header=0)
+nasa_tmp_min48409=nasa_tmp_min[nasa_tmp_min['wmo_id'] == 48409]
+
+#3. relative humidity(%) for wmo_id=48409
+nasa_rh=pd.read_csv('./tmd-weather-service-master/data/nasa_historical_data/converted/RH2M_0.csv', header=0)
+nasa_rh48409=nasa_rh[nasa_rh['wmo_id'] == 48409]
+
+#4. daily solar radiation for wmo_id=48409
+nasa_srad=pd.read_csv('./tmd-weather-service-master/data/nasa_historical_data/converted/CLRSKY_SFC_SW_DWN_0.csv', header=0)
+nasa_srad48409=nasa_srad[nasa_srad['wmo_id'] == 48409]
+
+#5. precipitation for wmo_id=48409
+nasa_prep=pd.read_csv('./tmd-weather-service-master/data/nasa_historical_data/converted/PRECTOT_0.csv', header=0)
+nasa_prep48409=nasa_prep[nasa_prep['wmo_id'] == 48409]
+
+
+"""
+181125 separate these data by one year(33 year's data are contained)
+1. too extract by using 'data_year' columns
+"""
+nasa_tmp_max_dict = {}
+for i in range(1985, 2018):    
+    data = nasa_tmp_max48409[nasa_tmp_max48409['data_year']==i]
+    nasa_tmp_max_dict.update({i:data})
+
+nasa_tmp_min_dict = {}
+for i in range(1985, 2018):    
+    data = nasa_tmp_min48409[nasa_tmp_min48409['data_year']==i]
+    nasa_tmp_min_dict.update({i:data})
+
+nasa_rh_dict = {}
+for i in range(1985, 2018):    
+    data = nasa_rh48409[nasa_rh48409['data_year']==i]
+    nasa_rh_dict.update({i:data})
+
+nasa_srad_dict = {}
+for i in range(1985, 2018):    
+    data = nasa_srad48409[nasa_srad48409['data_year']==i]
+    nasa_srad_dict.update({i:data})
+    
+nasa_prep_dict = {}
+for i in range(1985, 2018):
+    data = nasa_prep48409[nasa_prep48409['data_year']==i]
+    nasa_prep_dict.update({i:data})
+    
+"""
+181126 merge tmax, tmin, rain, srad data of the same year.
+"""
+
+nasa_dict = {}  #the dictionary whose key is year 
+for i in range(1985, 2018):
+    data = pd.concat([nasa_srad_dict[i]['data_value'], nasa_tmp_max_dict[i]['data_value'], 
+                      nasa_tmp_min_dict[i]['data_value'], nasa_prep_dict[i]['data_value']], axis=1)
+    data.columns = ['SRAD', 'TMAX', 'TMIN', 'RAIN']
+    data.index = np.arange(1, len(data.index)+1)
+    day = pd.DataFrame(np.arange(1, len(data.index)+1), columns=['DAY'], index=np.arange(1, len(data.index)+1))
+    data = pd.concat([day, data], axis=1)
+    year = pd.DataFrame([i]*len(data.index), columns=['YEAR'], index=np.arange(1, len(data.index)+1))
+    data = pd.concat([data, year], axis=1)
+    nasa_dict.update({i:data})
+
+
+#confirm if there is missing data (-99.00)
+for i in range(1985, 2018):
+    if np.shape(nasa_dict[i][nasa_dict[i]['SRAD'] == -99.00])[0] == 0:
+        print(i)
+        
+#convert from dataframe to wtd file(clement's code)        
+for i in range(1985, 2008):
+    dataframe2wtd(nasa_dict[i], "nasa"+repr(i))
+ 
+os.mkdir('NASA_WTD')
+for i in range(1985, 2008):
+    shutil.move(src="NASA{}.WTD".format(i), dst='NASA_WTD/')
+    
+
+
+"""
+181125 calculate SRAD(MJ/m2) from sunshine hours
+１日だけ不老不死になれる
+丁半をガラス
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

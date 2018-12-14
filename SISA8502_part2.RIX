@@ -1,0 +1,1074 @@
+*EXP.DETAILS: SISA8501 simulation, Thailand
+
+*GENERAL
+@PEOPLE
+-99
+@ADDRESS
+Si Saket, Thailand
+@SITE
+Si Saket, Thailand
+@ PAREA  PRNO  PLEN  PLDR  PLSP  PLAY HAREA  HRNO  HLEN  HARM.........
+    -99   -99   -99   -99   -99   -99   -99   -99   -99   -99
+
+!TREATMENTS section need the information of each simulation's parameter combinations.
+
+*TREATMENTS                        -------------FACTOR LEVELS------------
+@N R O C TNAME.................... CU FL SA IC MP MI MF MR MC MT ME MH SM
+ 1 1 0 0 W85                        1  1  0  1  1  1  1  1  0  0  0  0  1
+ 2 1 0 0 W86                        1  2  0  2  2  2  2  2  0  0  0  0  2
+ 3 1 0 0 W87                        1  3  0  3  3  3  3  3  0  0  0  0  3
+ 4 1 0 0 W88                        1  4  0  4  4  4  4  4  0  0  0  0  4
+ 5 1 0 0 W89                        1  5  0  5  5  5  5  5  0  0  0  0  5
+ 6 1 0 0 W90                        1  6  0  6  6  6  6  6  0  0  0  0  6
+ 7 1 0 0 W91                        1  7  0  7  7  7  7  7  0  0  0  0  7
+ 8 1 0 0 W92                        1  8  0  8  8  8  8  8  0  0  0  0  8
+ 9 1 0 0 W93                        1  9  0  9  9  9  9  9  0  0  0  0  9
+10 1 0 0 W94                        1 10  0 10 10 10 10 10  0  0  0  0 10
+11 1 0 0 W95                        1 11  0 11 11 11 11 11  0  0  0  0 11
+12 1 0 0 W96                        1 12  0 12 12 12 12 12  0  0  0  0 12
+13 1 0 0 W97                        1 13  0 13 13 13 13 13  0  0  0  0 13
+14 1 0 0 W98                        1 14  0 14 14 14 14 14  0  0  0  0 14
+15 1 0 0 W99                        1 15  0 15 15 15 15 15  0  0  0  0 15
+16 1 0 0 W01                        1 16  0 16 16 16 16 16  0  0  0  0 16
+17 1 0 0 W02                        1 17  0 17 17 17 17 17  0  0  0  0 17
+18 1 0 0 W03                        1 18  0 18 18 18 18 18  0  0  0  0 18
+19 1 0 0 W04                        1 19  0 19 19 19 19 19  0  0  0  0 19
+20 1 0 0 W05                        1 20  0 20 20 20 20 20  0  0  0  0 20 
+
+
+!The rice variety harvested in Thailand is KDML105, whose INGENO id is TR0001.
+ 
+*CULTIVARS
+@C CR INGENO CNAME
+ 1 RI TR0001 KDML105
+
+
+!In FIELDS section, we need to describe the weather station's name registered in Dssat weather file.
+!In addition, we must select the ID of soil type(In Raitong Organics Farm, we apply WI_GLTH008)
+
+*FIELDS
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 1 SISA8501 SISA8501   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 1               0               0         0                 0     0     0     0   -99   -99
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 2 SISA8601 SISA8601   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 2               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 3 SISA8501 SISA8701   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 3               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 4 SISA8501 SISA8801   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 4               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 5 SISA8501 SISA8901   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 5               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 6 SISA8501 SISA9001   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 6               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 7 SISA8501 SISA9101   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 7               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 8 SISA8501 SISA9201   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 8               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+ 9 SISA8501 SISA9301   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+ 9               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+10 SISA8501 SISA9401   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+10               0               0         0                 0     0     0     0   -99   -99
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+11 SISA8501 SISA9501   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+11               0               0         0                 0     0     0     0   -99   -99
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+12 SISA8501 SISA9601   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+12               0               0         0                 0     0     0     0   -99   -99
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+13 SISA8501 SISA9701   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+13               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+14 SISA8501 SISA9801   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+14               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+15 SISA8501 SISA9901   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+15               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+16 SISA8501 SISA0101   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+16               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+17 SISA8501 SISA0201   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+17               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+18 SISA8501 SISA0301   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+18               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+19 SISA8501 SISA0401   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+19               0               0         0                 0     0     0     0   -99   -99 
+@L ID_FIELD WSTA....  FLSA  FLOB  FLDT  FLDD  FLDS  FLST SLTX  SLDP  ID_SOIL    FLNAME
+20 SISA8501 SISA0501   -99     0 DR000     0     0 00000 -99    150  WI_GLTH008 -99
+@L ...........XCRD ...........YCRD .....ELEV .............AREA .SLEN .FLWR .SLAS FLHST FHDUR
+20               0               0         0                 0     0     0     0   -99   -99 
+
+
+!For the INITIAL CONDITIONS section, simulation starting date must be described as ICDAT(yydoy format)
+!ICDAT must be before the planting date 
+
+*INITIAL CONDITIONS
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 1   -99 85213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 1    15   .25   5.2   4.6
+ 1    30   .27   4.2   4.2
+ 1    45   .25   4.5   3.9
+ 1    60   .24   3.2   3.5
+ 1    75   .24   2.5   2.4
+ 1    90   .25   1.5   1.3
+ 1   120   .25    .5    .5
+ 1   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 2   -99 86213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 2    15   .25   5.2   4.6
+ 2    30   .27   4.2   4.2
+ 2    45   .25   4.5   3.9
+ 2    60   .24   3.2   3.5
+ 2    75   .24   2.5   2.4
+ 2    90   .25   1.5   1.3
+ 2   120   .25    .5    .5
+ 2   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 3   -99 87213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 3    15   .25   5.2   4.6
+ 3    30   .27   4.2   4.2
+ 3    45   .25   4.5   3.9
+ 3    60   .24   3.2   3.5
+ 3    75   .24   2.5   2.4
+ 3    90   .25   1.5   1.3
+ 3   120   .25    .5    .5
+ 3   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 4   -99 88213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 4    15   .25   5.2   4.6
+ 4    30   .27   4.2   4.2
+ 4    45   .25   4.5   3.9
+ 4    60   .24   3.2   3.5
+ 4    75   .24   2.5   2.4
+ 4    90   .25   1.5   1.3
+ 4   120   .25    .5    .5
+ 4   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 5   -99 89213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 5    15   .25   5.2   4.6
+ 5    30   .27   4.2   4.2
+ 5    45   .25   4.5   3.9
+ 5    60   .24   3.2   3.5
+ 5    75   .24   2.5   2.4
+ 5    90   .25   1.5   1.3
+ 5   120   .25    .5    .5
+ 5   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 6   -99 90213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 6    15   .25   5.2   4.6
+ 6    30   .27   4.2   4.2
+ 6    45   .25   4.5   3.9
+ 6    60   .24   3.2   3.5
+ 6    75   .24   2.5   2.4
+ 6    90   .25   1.5   1.3
+ 6   120   .25    .5    .5
+ 6   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 7   -99 91213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 7    15   .25   5.2   4.6
+ 7    30   .27   4.2   4.2
+ 7    45   .25   4.5   3.9
+ 7    60   .24   3.2   3.5
+ 7    75   .24   2.5   2.4
+ 7    90   .25   1.5   1.3
+ 7   120   .25    .5    .5
+ 7   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 8   -99 92213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 8    15   .25   5.2   4.6
+ 8    30   .27   4.2   4.2
+ 8    45   .25   4.5   3.9
+ 8    60   .24   3.2   3.5
+ 8    75   .24   2.5   2.4
+ 8    90   .25   1.5   1.3
+ 8   120   .25    .5    .5
+ 8   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+ 9   -99 93213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+ 9    15   .25   5.2   4.6
+ 9    30   .27   4.2   4.2
+ 9    45   .25   4.5   3.9
+ 9    60   .24   3.2   3.5
+ 9    75   .24   2.5   2.4
+ 9    90   .25   1.5   1.3
+ 9   120   .25    .5    .5
+ 9   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+10   -99 94213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+10    15   .25   5.2   4.6
+10    30   .27   4.2   4.2
+10    45   .25   4.5   3.9
+10    60   .24   3.2   3.5
+10    75   .24   2.5   2.4
+10    90   .25   1.5   1.3
+10   120   .25    .5    .5
+10   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+11   -99 95213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+11    15   .25   5.2   4.6
+11    30   .27   4.2   4.2
+11    45   .25   4.5   3.9
+11    60   .24   3.2   3.5
+11    75   .24   2.5   2.4
+11    90   .25   1.5   1.3
+11   120   .25    .5    .5
+11   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+12   -99 96213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+12  ICBL  SH2O  SNH4  SNO3
+12    15   .25   5.2   4.6
+12    30   .27   4.2   4.2
+12    45   .25   4.5   3.9
+12    60   .24   3.2   3.5
+12    75   .24   2.5   2.4
+12    90   .25   1.5   1.3
+12   120   .25    .5    .5
+12   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+13   -99 97213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+13    15   .25   5.2   4.6
+13    30   .27   4.2   4.2
+13    45   .25   4.5   3.9
+13    60   .24   3.2   3.5
+13    75   .24   2.5   2.4
+13    90   .25   1.5   1.3
+13   120   .25    .5    .5
+13   150   .22    .5    .5 
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+14   -99 98213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+14    15   .25   5.2   4.6
+14    30   .27   4.2   4.2
+14    45   .25   4.5   3.9
+14    60   .24   3.2   3.5
+14    75   .24   2.5   2.4
+14    90   .25   1.5   1.3
+14   120   .25    .5    .5
+14   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+15   -99 99213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+15    15   .25   5.2   4.6
+15    30   .27   4.2   4.2
+15    45   .25   4.5   3.9
+15    60   .24   3.2   3.5
+15    75   .24   2.5   2.4
+15    90   .25   1.5   1.3
+15   120   .25    .5    .5
+15   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+16   -99 01213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+16    15   .25   5.2   4.6
+16    30   .27   4.2   4.2
+16    45   .25   4.5   3.9
+16    60   .24   3.2   3.5
+16    75   .24   2.5   2.4
+16    90   .25   1.5   1.3
+16   120   .25    .5    .5
+16   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+17   -99 02213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+17    15   .25   5.2   4.6
+17    30   .27   4.2   4.2
+17    45   .25   4.5   3.9
+17    60   .24   3.2   3.5
+17    75   .24   2.5   2.4
+17    90   .25   1.5   1.3
+17   120   .25    .5    .5
+17   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+18   -99 03213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+18    15   .25   5.2   4.6
+18    30   .27   4.2   4.2
+18    45   .25   4.5   3.9
+18    60   .24   3.2   3.5
+18    75   .24   2.5   2.4
+18    90   .25   1.5   1.3
+18   120   .25    .5    .5
+18   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+19   -99 04213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+19    15   .25   5.2   4.6
+19    30   .27   4.2   4.2
+19    45   .25   4.5   3.9
+19    60   .24   3.2   3.5
+19    75   .24   2.5   2.4
+19    90   .25   1.5   1.3
+19   120   .25    .5    .5
+19   150   .22    .5    .5
+@C   PCR ICDAT  ICRT  ICND  ICRN  ICRE  ICWD ICRES ICREN ICREP ICRIP ICRID ICNAME
+20   -99 05213   -99   -99   -99   -99   -99     0     0     0     0    15 -99
+@C  ICBL  SH2O  SNH4  SNO3
+20    15   .25   5.2   4.6
+20    30   .27   4.2   4.2
+20    45   .25   4.5   3.9
+20    60   .24   3.2   3.5
+20    75   .24   2.5   2.4
+20    90   .25   1.5   1.3
+20   120   .25    .5    .5
+20   150   .22    .5    .5 
+
+
+!Seeding or transplanting date must be described at PDATE.
+!If transplanting, choose "T" as PLME parameter, then add duration from seeding to transplanting(days) to PAGE param.
+!Furthermore, add temperature(cel) of the environment for growing nursery to PENV param.
+!If direct sowing, choose "S" as PLME parameter.
+ 
+*PLANTING DETAILS
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 1 85213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 2 86213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 3 87213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 4 88213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 5 89213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 6 90213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 7 91213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 8 92213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+ 9 93213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+10 94213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+11 95213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+12 96213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+13 97213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+14 98213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+15 99213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+16 01213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+17 02213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+18 03213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+19 04213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99
+@P PDATE EDATE  PPOP  PPOE  PLME  PLDS  PLRS  PLRD  PLDP  PLWT  PAGE  PENV  PLPH  SPRL                        PLNAME
+20 05213   -99    33    33     T     H    20     0     3   -99    35    30     1     0                        -99 
+
+*IRRIGATION AND WATER MANAGEMENT
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 1     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 1 85213 IR010     0
+ 1 85213 IR008    20
+ 1 85213 IR009   150
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 2     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 2 86213 IR010     0
+ 2 86213 IR008    20
+ 2 86213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 3     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 3 87213 IR010     0
+ 3 87213 IR008    20
+ 3 87213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 4     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 4 88213 IR010     0
+ 4 88213 IR008    20
+ 4 88213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 5     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 5 89213 IR010     0
+ 5 89213 IR008    20
+ 5 89213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 6     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 6 90213 IR010     0
+ 6 90213 IR008    20
+ 6 90213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 7     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 7 91213 IR010     0
+ 7 91213 IR008    20
+ 7 91213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 8     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 8 92213 IR010     0
+ 8 92213 IR008    20
+ 8 92213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+ 9     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+ 9 93213 IR010     0
+ 9 93213 IR008    20
+ 9 93213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+10     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+10 94213 IR010     0
+10 94213 IR008    20
+10 94213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+11     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+11 95213 IR010     0
+11 95213 IR008    20
+11 95213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+12     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+12 96213 IR010     0
+12 96213 IR008    20
+12 96213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+13     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+13 97213 IR010     0
+13 97213 IR008    20
+13 97213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+14     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+14 98213 IR010     0
+14 98213 IR008    20
+14 98213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+15     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+15 99213 IR010     0
+15 99213 IR008    20
+15 99213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+16     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+16 01213 IR010     0
+16 01213 IR008    20
+16 01213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+17     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+17 02213 IR010     0
+17 02213 IR008    20
+17 02213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+18     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+18 03213 IR010     0
+18 03213 IR008    20
+18 03213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+19     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+19 04213 IR010     0
+19 04213 IR008    20
+19 04213 IR009   150 
+@I  EFIR  IDEP  ITHR  IEPT  IOFF  IAME  IAMT IRNAME
+20     1   -99   -99   -99   -99   -99     5 -99
+@I IDATE  IROP IRVAL
+20 05213 IR010     0
+20 05213 IR008    20
+20 05213 IR009   150 
+
+*FERTILIZERS (INORGANIC)
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 1 85213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 2 86213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 3 87213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 4 88213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 5 89213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 6 90213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 7 91213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 8 92213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+ 9 93213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+10 94213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+11 95213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+12 96213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+13 97213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+14 98213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+15 99213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+16 01213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+17 02213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+18 03213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+19 04213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+@F FDATE  FMCD  FACD  FDEP  FAMN  FAMP  FAMK  FAMC  FAMO  FOCD FERNAME
+20 05213 FE001 AP001     0    20   -99   -99   -99   -99   -99 -99 
+ 
+
+*RESIDUES AND ORGANIC FERTILIZER
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 1 85210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 2 86210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 3 87210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 4 88210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 5 89210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 6 90210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 7 91210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 8 92210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+ 9 93210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+10 94210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+11 95210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+12 96210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+13 97210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+14 98210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+15 99210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+16 01210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+17 02210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+18 03210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+19 04210 RE001   300    .5   -99   -99   -99    10   -99 -99
+@R RDATE  RCOD  RAMT  RESN  RESP  RESK  RINP  RDEP  RMET RENAME
+20 05210 RE001   300    .5   -99   -99   -99    10   -99 -99
+
+*SIMULATION CONTROLS
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 1 GE              1     1     S 85210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 1 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 1 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 1 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 1 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 1 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 1 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 1 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 1 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 1 HA              0 83057   100     0
+ 
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 2 GE              1     1     S 86210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 2 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 2 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 2 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 2 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 2 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 2 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 2 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 2 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 2 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 3 GE              1     1     S 87210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 3 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 3 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 3 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 3 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 3 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 3 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 3 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 3 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 3 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 4 GE              1     1     S 88210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 4 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 4 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 4 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 4 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 4 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 4 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 4 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 4 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 4 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 5 GE              1     1     S 89210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 5 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 5 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 5 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 5 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 5 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 5 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 5 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 5 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 5 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 6 GE              1     1     S 90210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 6 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 6 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 6 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 6 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 6 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 6 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 6 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 6 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 6 HA              0 83057   100     0 
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 7 GE              1     1     S 91210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 7 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 7 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 7 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 7 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 7 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 7 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 7 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 7 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 7 HA              0 83057   100     0
+ 
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 8 GE              1     1     S 92210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 8 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 8 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 8 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 8 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 8 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 8 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 8 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 8 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 8 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+ 9 GE              1     1     S 93210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+ 9 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+ 9 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+ 9 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+ 9 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+ 9 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+ 9 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+ 9 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+ 9 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+ 9 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+10 GE              1     1     S 94210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+10 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+10 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+10 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+10 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+10 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+10 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+10 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+10 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+10 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+11 GE              1     1     S 95210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+11 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+11 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+11 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+11 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+11 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+11 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+11 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+11 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+11 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+12 GE              1     1     S 96210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+12 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+12 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+12 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT 
+12 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+12 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+12 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+12 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+12 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+12 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+13 GE              1     1     S 97210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+13 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+13 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+13 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+13 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+13 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+13 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+13 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+13 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+13 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+14 GE              1     1     S 98210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+14 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+14 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+14 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+14 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+14 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+14 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+14 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+14 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+14 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+15 GE              1     1     S 99210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+15 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+15 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+15 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+15 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+15 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+15 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+15 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+15 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+15 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+16 GE              1     1     S 01210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+16 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+16 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+16 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+16 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+16 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+16 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+16 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+16 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+16 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+17 GE              1     1     S 02210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+17 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+17 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+17 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+17 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+17 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+17 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+17 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+17 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+17 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+18 GE              1     1     S 03210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+18 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+18 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+18 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+18 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+18 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+18 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+18 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+18 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+18 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+19 GE              1     1     S 04210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+19 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+19 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+19 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+19 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+19 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+19 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+19 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+19 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+19 HA              0 83057   100     0
+
+@N GENERAL     NYERS NREPS START SDATE RSEED SNAME.................... SMODEL
+20 GE              1     1     S 05210  2150 DEFAULT SIMULATION CONTR
+@N OPTIONS     WATER NITRO SYMBI PHOSP POTAS DISES  CHEM  TILL   CO2
+20 OP              Y     Y     N     N     N     N     N     N     M
+@N METHODS     WTHER INCON LIGHT EVAPO INFIL PHOTO HYDRO NSWIT MESOM MESEV MESOL
+20 ME              M     M     E     R     S     C     R     1     G     S     2
+@N MANAGEMENT  PLANT IRRIG FERTI RESID HARVS
+20 MA              R     R     R     R     M
+@N OUTPUTS     FNAME OVVEW SUMRY FROPT GROUT CAOUT WAOUT NIOUT MIOUT DIOUT VBOSE CHOUT OPOUT
+20 OU              N     Y     Y     1     Y     N     Y     Y     N     N     Y     N     N
+
+@  AUTOMATIC MANAGEMENT
+@N PLANTING    PFRST PLAST PH2OL PH2OU PH2OD PSTMX PSTMN
+20 PL          82050 82064    40   100    30    40    10
+@N IRRIGATION  IMDEP ITHRL ITHRU IROFF IMETH IRAMT IREFF
+20 IR             30    50   100 GS000 IR001    10     1
+@N NITROGEN    NMDEP NMTHR NAMNT NCODE NAOFF
+20 NI             30    50    25 FE001 GS000
+@N RESIDUES    RIPCN RTIME RIDEP
+20 RE            100     1    20
+@N HARVEST     HFRST HLAST HPCNP HPCNR
+20 HA              0 83057   100     0 
+ 
+ 
+
