@@ -23,65 +23,75 @@ def DATE2DOY(datetime):
         
     return doy: int
     """
-    if type(datetime) != str:
-        return 0
-    else:
-        date = datetime[5:]
-        year = int(datetime[:4])
-        DOY = 0
-        if year % 4 == 0:
-            if date[:2] == '01':
-                DOY = DOY + int(date[3:])
-            elif date[:2] == '02':
-                DOY = 31 + int(date[3:])
-            elif date[:2] == '03':
-                DOY = 60 + int(date[3:])
-            elif date[:2] == '04':
-                DOY = 91 + int(date[3:])
-            elif date[:2] == '05':
-                DOY = 121 + int(date[3:])
-            elif date[:2] == '06':
-                DOY = 152 + int(date[3:])
-            elif date[:2] == '07':
-                DOY = 182 + int(date[3:])
-            elif date[:2] == '08':
-                DOY = 213 + int(date[3:])
-            elif date[:2] == '09':
-                DOY = 244 + int(date[3:])
-            elif date[:2] == '10':
-                DOY = 274 + int(date[3:])
-            elif date[:2] == '11':
-                DOY = 305 + int(date[3:])
-            elif date[:2] == '12':
-                DOY = 335 + int(date[3:])
-                
+    if type(datetime) != str or datetime != datetime:
+        if type(datetime) == pd._libs.tslibs.timestamps.Timestamp:
+            datetime = repr(datetime.year)+"-"+repr(datetime.month).zfill(2)+"-"+repr(datetime.day).zfill(2)
+        else:    
+            return 0
+    elif re.search("^\d{4}.\d{2}.\d{2}$", datetime) == None:
+        if re.search("^\d{4}.\d{1,}.\d{1,}$", datetime):
+            datetime = re.sub(r"(\D)(\d{1})(($|\D))", r"\g<1>0\g<2>\g<3>", datetime)
         else:
-            if date[:2] == '01':
-                DOY = DOY + int(date[3:])
-            elif date[:2] == '02':
-                DOY = 31 + int(date[3:])
-            elif date[:2] == '03':
-                DOY = 59 + int(date[3:])
-            elif date[:2] == '04':
-                DOY = 90 + int(date[3:])
-            elif date[:2] == '05':
-                DOY = 120 + int(date[3:])
-            elif date[:2] == '06':
-                DOY = 151 + int(date[3:])
-            elif date[:2] == '07':
-                DOY = 181 + int(date[3:])
-            elif date[:2] == '08':
-                DOY = 212 + int(date[3:])
-            elif date[:2] == '09':
-                DOY = 243 + int(date[3:])
-            elif date[:2] == '10':
-                DOY = 273 + int(date[3:])
-            elif date[:2] == '11':
-                DOY = 304 + int(date[3:])
-            elif date[:2] == '12':
-                DOY = 334 + int(date[3:])
+            pass
+    else:
+        datetime = datetime
         
-        return DOY
+    date = datetime[5:]
+    year = int(datetime[:4])
+    DOY = 0
+    if year % 4 == 0:
+        if date[:2] == '01':
+            DOY = DOY + int(date[3:])
+        elif date[:2] == '02':
+            DOY = 31 + int(date[3:])
+        elif date[:2] == '03':
+            DOY = 60 + int(date[3:])
+        elif date[:2] == '04':
+            DOY = 91 + int(date[3:])
+        elif date[:2] == '05':
+            DOY = 121 + int(date[3:])
+        elif date[:2] == '06':
+            DOY = 152 + int(date[3:])
+        elif date[:2] == '07':
+            DOY = 182 + int(date[3:])
+        elif date[:2] == '08':
+            DOY = 213 + int(date[3:])
+        elif date[:2] == '09':
+            DOY = 244 + int(date[3:])
+        elif date[:2] == '10':
+            DOY = 274 + int(date[3:])
+        elif date[:2] == '11':
+            DOY = 305 + int(date[3:])
+        elif date[:2] == '12':
+            DOY = 335 + int(date[3:])
+            
+    else:
+        if date[:2] == '01':
+            DOY = DOY + int(date[3:])
+        elif date[:2] == '02':
+            DOY = 31 + int(date[3:])
+        elif date[:2] == '03':
+            DOY = 59 + int(date[3:])
+        elif date[:2] == '04':
+            DOY = 90 + int(date[3:])
+        elif date[:2] == '05':
+            DOY = 120 + int(date[3:])
+        elif date[:2] == '06':
+            DOY = 151 + int(date[3:])
+        elif date[:2] == '07':
+            DOY = 181 + int(date[3:])
+        elif date[:2] == '08':
+            DOY = 212 + int(date[3:])
+        elif date[:2] == '09':
+            DOY = 243 + int(date[3:])
+        elif date[:2] == '10':
+            DOY = 273 + int(date[3:])
+        elif date[:2] == '11':
+            DOY = 304 + int(date[3:])
+        elif date[:2] == '12':
+            DOY = 334 + int(date[3:])
+    
+    return DOY
 
 def DOY2DATE(doy, year=2018):
     """
@@ -343,8 +353,19 @@ def compareTwoDf(DOYdb1, DOYdb2, title, save=None):
     plt.show()
 
 
+def genDaysInEachYear(year):
+    if year%4 == 0:
+        return 366
+    else:
+        return 365
 
-
+def genDaysFromParticularYear(year, pyear):    
+    ynum = 0
+    ylist = np.arange(pyear+1, year+1, 1)
+    for i in ylist:
+        ynum = ynum + genDaysInEachYear(i)
+    
+    return ynum
 
             
             

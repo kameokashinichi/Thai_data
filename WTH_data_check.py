@@ -16,6 +16,7 @@ from statistics import mean, stdev, median
 import matplotlib.pyplot as plt
 from pylab import cm
 from weatherAPI import extractWTHFromDirectory
+import json
 
 
 #extract .wth file from the directory downloaded
@@ -50,6 +51,34 @@ def WTH2Dataframe(id, wth):
             df.iloc[i, j] = float(df.iloc[i, j])
     return df
 
+
+def WTH2Dataframe2(wth):
+    """
+    id : str
+    
+    wth : str
+        the name of the WTH file.
+    
+    """    
+    record = []
+    with open(os.getcwd() + '/' + wth, 'r') as f:
+    #print(type(f))
+        for row in f:
+        #print(type(row))
+            record.append(row.strip())
+        
+    WTH = record[4:]
+    weather = []
+    for row in WTH:
+        element = row.split()
+        weather.append(element)
+    
+    weather = np.asarray(weather)
+    ind = np.arange(1, weather.shape[0])
+    df = pd.DataFrame(weather[1:, 1:].astype(np.float32), index=ind, columns=weather[0,1:])
+
+    return df
+
 def WTD2DataFrame(path):
     """
     id : str
@@ -78,11 +107,8 @@ def WTD2DataFrame(path):
     for i in range(1, np.shape(weather)[0]):
         ind.append(weather[i, 0][2:])
     #print(weather[0])
-    df = pd.DataFrame(weather[1:, 1:], index=ind, columns=weather[0,1:])
-    for i in range(np.shape(df)[0]):
-        print(i)
-        for j in range(np.shape(df)[1]):
-            df.iloc[i, j] = float(df.iloc[i, j])
+    df = pd.DataFrame(weather[1:, 1:].astype(np.float32), index=ind, columns=weather[0,1:])
+
     return df    
 
 """
@@ -746,6 +772,30 @@ def DOY2DATE(doy, year=2018):
     return date
 
 
+def datelist2DOY(datelist):
+    """
+    datelist: list or numpy ndarray
+        the list for the date 
+        
+    return doylist: list
+    """
+    
+    doylist = []
+    for i in datelist:
+        doy = DATE2DOY(i)
+        doylist.append(doy)
+    
+    return doylist
+
+def doylist2Date(doylist, year=2018):
+    datelist = []
+    for i in doylist:
+        #print(i)
+        date = DOY2DATE(i, year=year)
+        datelist.append(date)
+    
+    return datelist
+
 
 #この関数はインデックスで指定するので、列名検索の時は転置させる必要有り
 def searchElementforX(data, *args, strict = False):
@@ -823,7 +873,36 @@ def searchElementforX(data, *args, strict = False):
     
     return newdf
 
+def genDaysInEachYear(year):
+    if year%4 == 0:
+        return 366
+    else:
+        return 365
 
+def genDaysFromParticularYear(year, pyear):
+    if year == pyear:
+        return 0
+    else:
+        ynum = 0
+        ylist = np.arange(pyear+1, year+1, 1)
+        for i in ylist:
+            ynum = ynum + genDaysInEachYear(i)
+        
+        return ynum
+    
+def getNearestValue(list, num):
+    """
+    概要: リストからある値に最も近い値を返却する関数
+    @param list: データ配列
+    @param num: 対象値
+    @return 対象値に最も近い値
+    """
+
+    # リスト要素と対象値の差分を計算し最小値のインデックスを取得
+    idx = np.abs(np.asarray(list) - num).argmin()
+    return list[idx]    
+    
+    
 
 
 
